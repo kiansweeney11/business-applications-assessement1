@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\bin\Debug\net6.0-windows\PizzaAppAttempt2.exe
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\bin\Debug\net6.0-windows\PizzaAppAttempt2.deps.json
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\bin\Debug\net6.0-windows\PizzaAppAttempt2.runtimeconfig.json
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\bin\Debug\net6.0-windows\PizzaAppAttempt2.dll
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\bin\Debug\net6.0-windows\PizzaAppAttempt2.pdb
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.PizzaOrderApp.resources
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.AssemblyInfo.cs
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.dll
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\refint\PizzaAppAttempt2.dll
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.pdb
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\PizzaAppAttempt2.genruntimeconfig.cache
+C:\Users\user\Desktop\Masters\Ms806-BusApp\PizzaAppAttempt2\obj\Debug\net6.0-windows\ref\PizzaAppAttempt2.dll
