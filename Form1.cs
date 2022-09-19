@@ -16,7 +16,6 @@ namespace PizzaAppAttempt2
         private int OrderdedPizzas;
         private decimal OrderedPrice;
 
-
         private void SummaryButton_Click(object sender, EventArgs e)
         {
 
@@ -34,6 +33,7 @@ namespace PizzaAppAttempt2
             this.OptionsPanel.Visible = true;
             // change title of app dynamically
             this.Text = ServerTextBox.Text + " @Table Number: " + TableNumberTextBox.Text;
+            MargeritaText.Focus();
         }
 
     }

@@ -39,10 +39,10 @@
             this.PineappleLabelPrice = new System.Windows.Forms.Label();
             this.PepperoniPriceLabel = new System.Windows.Forms.Label();
             this.MargeritaPriceLabel = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CalzoniText = new System.Windows.Forms.TextBox();
+            this.PineappleText = new System.Windows.Forms.TextBox();
+            this.PepperoniText = new System.Windows.Forms.TextBox();
+            this.MargeritaText = new System.Windows.Forms.TextBox();
             this.CalzoniLabel = new System.Windows.Forms.Label();
             this.PineappleLabel = new System.Windows.Forms.Label();
             this.PepperoniLabel = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.TableNumberTextBox.Name = "TableNumberTextBox";
             this.TableNumberTextBox.Size = new System.Drawing.Size(64, 34);
             this.TableNumberTextBox.TabIndex = 3;
+            this.TableNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TableNumberLabel
             // 
@@ -109,6 +110,7 @@
             this.ServerTextBox.Name = "ServerTextBox";
             this.ServerTextBox.Size = new System.Drawing.Size(150, 34);
             this.ServerTextBox.TabIndex = 1;
+            this.ServerTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ServerLabel
             // 
@@ -127,10 +129,10 @@
             this.OrderGroupBox.Controls.Add(this.PineappleLabelPrice);
             this.OrderGroupBox.Controls.Add(this.PepperoniPriceLabel);
             this.OrderGroupBox.Controls.Add(this.MargeritaPriceLabel);
-            this.OrderGroupBox.Controls.Add(this.textBox4);
-            this.OrderGroupBox.Controls.Add(this.textBox3);
-            this.OrderGroupBox.Controls.Add(this.textBox2);
-            this.OrderGroupBox.Controls.Add(this.textBox1);
+            this.OrderGroupBox.Controls.Add(this.CalzoniText);
+            this.OrderGroupBox.Controls.Add(this.PineappleText);
+            this.OrderGroupBox.Controls.Add(this.PepperoniText);
+            this.OrderGroupBox.Controls.Add(this.MargeritaText);
             this.OrderGroupBox.Controls.Add(this.CalzoniLabel);
             this.OrderGroupBox.Controls.Add(this.PineappleLabel);
             this.OrderGroupBox.Controls.Add(this.PepperoniLabel);
@@ -184,37 +186,41 @@
             this.MargeritaPriceLabel.TabIndex = 2;
             this.MargeritaPriceLabel.Text = "@ €9.99 Per Pizza";
             // 
-            // textBox4
+            // CalzoniText
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(312, 166);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(72, 34);
-            this.textBox4.TabIndex = 7;
+            this.CalzoniText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CalzoniText.Location = new System.Drawing.Point(312, 166);
+            this.CalzoniText.Name = "CalzoniText";
+            this.CalzoniText.Size = new System.Drawing.Size(72, 34);
+            this.CalzoniText.TabIndex = 7;
+            this.CalzoniText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // PineappleText
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(312, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(72, 34);
-            this.textBox3.TabIndex = 6;
+            this.PineappleText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PineappleText.Location = new System.Drawing.Point(312, 119);
+            this.PineappleText.Name = "PineappleText";
+            this.PineappleText.Size = new System.Drawing.Size(72, 34);
+            this.PineappleText.TabIndex = 6;
+            this.PineappleText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // PepperoniText
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(312, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 34);
-            this.textBox2.TabIndex = 5;
+            this.PepperoniText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PepperoniText.Location = new System.Drawing.Point(312, 76);
+            this.PepperoniText.Name = "PepperoniText";
+            this.PepperoniText.Size = new System.Drawing.Size(72, 34);
+            this.PepperoniText.TabIndex = 5;
+            this.PepperoniText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // MargeritaText
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(312, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 34);
-            this.textBox1.TabIndex = 4;
+            this.MargeritaText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MargeritaText.Location = new System.Drawing.Point(312, 35);
+            this.MargeritaText.Name = "MargeritaText";
+            this.MargeritaText.Size = new System.Drawing.Size(72, 34);
+            this.MargeritaText.TabIndex = 4;
+            this.MargeritaText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CalzoniLabel
             // 
@@ -343,10 +349,10 @@
         private Label PineappleLabel;
         private Label PepperoniLabel;
         private Label MargeritaLabel;
-        private TextBox textBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox MargeritaText;
+        private TextBox CalzoniText;
+        private TextBox PineappleText;
+        private TextBox PepperoniText;
         private Label MargeritaPriceLabel;
         private Label PepperoniPriceLabel;
         private Label CalzoniLabelPrice;
