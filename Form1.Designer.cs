@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzaOrderApp));
             this.DefaultPanel = new System.Windows.Forms.Panel();
             this.StartButton = new System.Windows.Forms.Button();
             this.TableNumberTextBox = new System.Windows.Forms.TextBox();
@@ -52,9 +54,21 @@
             this.SummaryButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.OrderButton = new System.Windows.Forms.Button();
+            this.LogoBox = new System.Windows.Forms.PictureBox();
+            this.ExitToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ClearToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.OrderSummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.ReceiptsOrderSummary = new System.Windows.Forms.TextBox();
+            this.OrderSummaryPizzas = new System.Windows.Forms.TextBox();
+            this.ServerTextOrderSummary = new System.Windows.Forms.TextBox();
+            this.OrderSummaryTableReceipts = new System.Windows.Forms.Label();
+            this.NumberPizzaOrderedOrderSum = new System.Windows.Forms.Label();
+            this.ServerOrderSummary = new System.Windows.Forms.Label();
             this.DefaultPanel.SuspendLayout();
             this.OrderGroupBox.SuspendLayout();
             this.OptionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).BeginInit();
+            this.OrderSummaryGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DefaultPanel
@@ -226,7 +240,7 @@
             // 
             this.CalzoniLabel.AutoSize = true;
             this.CalzoniLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CalzoniLabel.Location = new System.Drawing.Point(109, 166);
+            this.CalzoniLabel.Location = new System.Drawing.Point(80, 166);
             this.CalzoniLabel.Name = "CalzoniLabel";
             this.CalzoniLabel.Size = new System.Drawing.Size(148, 30);
             this.CalzoniLabel.TabIndex = 3;
@@ -236,7 +250,7 @@
             // 
             this.PineappleLabel.AutoSize = true;
             this.PineappleLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PineappleLabel.Location = new System.Drawing.Point(109, 122);
+            this.PineappleLabel.Location = new System.Drawing.Point(80, 123);
             this.PineappleLabel.Name = "PineappleLabel";
             this.PineappleLabel.Size = new System.Drawing.Size(176, 30);
             this.PineappleLabel.TabIndex = 2;
@@ -246,7 +260,7 @@
             // 
             this.PepperoniLabel.AutoSize = true;
             this.PepperoniLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PepperoniLabel.Location = new System.Drawing.Point(109, 79);
+            this.PepperoniLabel.Location = new System.Drawing.Point(80, 79);
             this.PepperoniLabel.Name = "PepperoniLabel";
             this.PepperoniLabel.Size = new System.Drawing.Size(179, 30);
             this.PepperoniLabel.TabIndex = 1;
@@ -256,7 +270,7 @@
             // 
             this.MargeritaLabel.AutoSize = true;
             this.MargeritaLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MargeritaLabel.Location = new System.Drawing.Point(111, 39);
+            this.MargeritaLabel.Location = new System.Drawing.Point(80, 39);
             this.MargeritaLabel.Name = "MargeritaLabel";
             this.MargeritaLabel.Size = new System.Drawing.Size(177, 30);
             this.MargeritaLabel.TabIndex = 0;
@@ -269,9 +283,9 @@
             this.OptionsPanel.Controls.Add(this.SummaryButton);
             this.OptionsPanel.Controls.Add(this.ClearButton);
             this.OptionsPanel.Controls.Add(this.OrderButton);
-            this.OptionsPanel.Location = new System.Drawing.Point(32, 279);
+            this.OptionsPanel.Location = new System.Drawing.Point(32, 273);
             this.OptionsPanel.Name = "OptionsPanel";
-            this.OptionsPanel.Size = new System.Drawing.Size(727, 81);
+            this.OptionsPanel.Size = new System.Drawing.Size(727, 70);
             this.OptionsPanel.TabIndex = 2;
             this.OptionsPanel.Visible = false;
             // 
@@ -283,6 +297,7 @@
             this.Exit.Size = new System.Drawing.Size(112, 34);
             this.Exit.TabIndex = 3;
             this.Exit.Text = "Exit";
+            this.ExitToolTip.SetToolTip(this.Exit, "Press to exit application.");
             this.Exit.UseVisualStyleBackColor = true;
             // 
             // SummaryButton
@@ -294,7 +309,6 @@
             this.SummaryButton.TabIndex = 2;
             this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
-            this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
             // ClearButton
             // 
@@ -304,6 +318,7 @@
             this.ClearButton.Size = new System.Drawing.Size(112, 34);
             this.ClearButton.TabIndex = 1;
             this.ClearButton.Text = "Clear";
+            this.ClearToolTip.SetToolTip(this.ClearButton, "Press to Clear Form for New Order.");
             this.ClearButton.UseVisualStyleBackColor = true;
             // 
             // OrderButton
@@ -315,6 +330,100 @@
             this.OrderButton.TabIndex = 0;
             this.OrderButton.Text = "Order";
             this.OrderButton.UseVisualStyleBackColor = true;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
+            // 
+            // LogoBox
+            // 
+            this.LogoBox.BackColor = System.Drawing.SystemColors.Window;
+            this.LogoBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoBox.Image")));
+            this.LogoBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("LogoBox.InitialImage")));
+            this.LogoBox.Location = new System.Drawing.Point(247, 552);
+            this.LogoBox.Name = "LogoBox";
+            this.LogoBox.Size = new System.Drawing.Size(268, 105);
+            this.LogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.LogoBox.TabIndex = 3;
+            this.LogoBox.TabStop = false;
+            // 
+            // ExitToolTip
+            // 
+            this.ExitToolTip.AutoPopDelay = 5000;
+            this.ExitToolTip.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.ExitToolTip.InitialDelay = 300;
+            this.ExitToolTip.ReshowDelay = 100;
+            this.ExitToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ExitToolTip.ToolTipTitle = "Info";
+            // 
+            // ClearToolTip
+            // 
+            this.ClearToolTip.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.ClearToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ClearToolTip.ToolTipTitle = "Info";
+            // 
+            // OrderSummaryGroupBox
+            // 
+            this.OrderSummaryGroupBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.OrderSummaryGroupBox.Controls.Add(this.ReceiptsOrderSummary);
+            this.OrderSummaryGroupBox.Controls.Add(this.OrderSummaryPizzas);
+            this.OrderSummaryGroupBox.Controls.Add(this.ServerTextOrderSummary);
+            this.OrderSummaryGroupBox.Controls.Add(this.OrderSummaryTableReceipts);
+            this.OrderSummaryGroupBox.Controls.Add(this.NumberPizzaOrderedOrderSum);
+            this.OrderSummaryGroupBox.Controls.Add(this.ServerOrderSummary);
+            this.OrderSummaryGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.OrderSummaryGroupBox.Location = new System.Drawing.Point(32, 363);
+            this.OrderSummaryGroupBox.Name = "OrderSummaryGroupBox";
+            this.OrderSummaryGroupBox.Size = new System.Drawing.Size(727, 171);
+            this.OrderSummaryGroupBox.TabIndex = 11;
+            this.OrderSummaryGroupBox.TabStop = false;
+            this.OrderSummaryGroupBox.Text = "Table Order Summary Data";
+            this.OrderSummaryGroupBox.Visible = false;
+            // 
+            // ReceiptsOrderSummary
+            // 
+            this.ReceiptsOrderSummary.Location = new System.Drawing.Point(391, 117);
+            this.ReceiptsOrderSummary.Name = "ReceiptsOrderSummary";
+            this.ReceiptsOrderSummary.Size = new System.Drawing.Size(150, 31);
+            this.ReceiptsOrderSummary.TabIndex = 5;
+            // 
+            // OrderSummaryPizzas
+            // 
+            this.OrderSummaryPizzas.Location = new System.Drawing.Point(391, 71);
+            this.OrderSummaryPizzas.Name = "OrderSummaryPizzas";
+            this.OrderSummaryPizzas.Size = new System.Drawing.Size(150, 31);
+            this.OrderSummaryPizzas.TabIndex = 4;
+            // 
+            // ServerTextOrderSummary
+            // 
+            this.ServerTextOrderSummary.Location = new System.Drawing.Point(391, 31);
+            this.ServerTextOrderSummary.Name = "ServerTextOrderSummary";
+            this.ServerTextOrderSummary.Size = new System.Drawing.Size(150, 31);
+            this.ServerTextOrderSummary.TabIndex = 3;
+            // 
+            // OrderSummaryTableReceipts
+            // 
+            this.OrderSummaryTableReceipts.AutoSize = true;
+            this.OrderSummaryTableReceipts.Location = new System.Drawing.Point(101, 123);
+            this.OrderSummaryTableReceipts.Name = "OrderSummaryTableReceipts";
+            this.OrderSummaryTableReceipts.Size = new System.Drawing.Size(181, 25);
+            this.OrderSummaryTableReceipts.TabIndex = 2;
+            this.OrderSummaryTableReceipts.Text = "Total Table Receipts";
+            // 
+            // NumberPizzaOrderedOrderSum
+            // 
+            this.NumberPizzaOrderedOrderSum.AutoSize = true;
+            this.NumberPizzaOrderedOrderSum.Location = new System.Drawing.Point(101, 77);
+            this.NumberPizzaOrderedOrderSum.Name = "NumberPizzaOrderedOrderSum";
+            this.NumberPizzaOrderedOrderSum.Size = new System.Drawing.Size(240, 25);
+            this.NumberPizzaOrderedOrderSum.TabIndex = 1;
+            this.NumberPizzaOrderedOrderSum.Text = "Number of Pizza\'s Ordered";
+            // 
+            // ServerOrderSummary
+            // 
+            this.ServerOrderSummary.AutoSize = true;
+            this.ServerOrderSummary.Location = new System.Drawing.Point(101, 37);
+            this.ServerOrderSummary.Name = "ServerOrderSummary";
+            this.ServerOrderSummary.Size = new System.Drawing.Size(122, 25);
+            this.ServerOrderSummary.TabIndex = 0;
+            this.ServerOrderSummary.Text = "Server Name";
             // 
             // PizzaOrderApp
             // 
@@ -322,9 +431,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 669);
+            this.Controls.Add(this.OrderSummaryGroupBox);
+            this.Controls.Add(this.LogoBox);
             this.Controls.Add(this.OptionsPanel);
             this.Controls.Add(this.OrderGroupBox);
             this.Controls.Add(this.DefaultPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PizzaOrderApp";
             this.Text = "PizzaOrderApp";
             this.DefaultPanel.ResumeLayout(false);
@@ -332,7 +444,11 @@
             this.OrderGroupBox.ResumeLayout(false);
             this.OrderGroupBox.PerformLayout();
             this.OptionsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoBox)).EndInit();
+            this.OrderSummaryGroupBox.ResumeLayout(false);
+            this.OrderSummaryGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -362,5 +478,15 @@
         private Button ClearButton;
         private Button Exit;
         private Button SummaryButton;
+        private PictureBox LogoBox;
+        private ToolTip ExitToolTip;
+        private ToolTip ClearToolTip;
+        private GroupBox OrderSummaryGroupBox;
+        private Label OrderSummaryTableReceipts;
+        private Label NumberPizzaOrderedOrderSum;
+        private Label ServerOrderSummary;
+        private TextBox ReceiptsOrderSummary;
+        private TextBox OrderSummaryPizzas;
+        private TextBox ServerTextOrderSummary;
     }
 }
