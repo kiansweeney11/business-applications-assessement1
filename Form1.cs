@@ -1,8 +1,14 @@
+// Name: Kian Sweeney
+// ID: 22220670
+// MS806 Assignment 1
+// Due Date: 30/9/22
+// 
 namespace PizzaAppAttempt2
 {
     public partial class PizzaOrderApp : Form
     {
         // initialise prices for pizzas
+        // const as these will not change
         private const decimal MarPrice = 9.99m;
         private const decimal PeppPrice = 10.99m;
         private const decimal PinePrice = 11.49m;
@@ -20,7 +26,6 @@ namespace PizzaAppAttempt2
         {
             InitializeComponent();
         }
-
         private void StartButton_Click(object sender, EventArgs e)
         {
             // add checks to ensure server names and table numbers inputted correctly.
@@ -50,7 +55,7 @@ namespace PizzaAppAttempt2
                     PepperoniText.Text = "0";
                     PineappleText.Text = "0";
                     CalzoniText.Text = "0";
-                    this.PictureBoxStartMenu.Visible = false;
+                    //this.PictureBoxStartMenu.Visible = false;
                     this.PictureBoxMainMenu.Visible = true;
                     MargeritaText.Focus();
                 }
@@ -63,14 +68,83 @@ namespace PizzaAppAttempt2
             }
 
         }
-
         private void OrderButton_Click(object sender, EventArgs e)
         {
+            // need to nest try/catch statements
+            // if we leave them just in a line this would work
+            // but this would go through each indivdual error
+            // instead we want it to stop at first error only as per design outline
+            // also need to do this as if we have 3 valid values lets say that are ordered
+            // and one incorrectly inputted value we can't just add the totals of the valid inputs
+            // as the total order isnt valid. this is also where nesting the try statements comes
+            // in handy
+            this.OrderSummaryGroupBox.Visible = true;
+            // setting these visibility settings here in case someone orders, then checks
+            // total company transactions then goes back to hit order again.
+            this.CompanySummaryGroupBox.Visible = false;
             try
             {
                 int MargeritaTotal = int.Parse(MargeritaText.Text);
-                OrderdedPizzas += MargeritaTotal;
-                TableReceipts += MargeritaTotal * MarPrice;
+                decimal MargeritaCost = MargeritaTotal * MarPrice;
+                try
+                {
+                    int PepperoniTotal = int.Parse(PepperoniText.Text);
+                    decimal PepperoniCost = PepperoniTotal * PeppPrice;
+                    try
+                    {
+                        int PineappleTotal = int.Parse(PineappleText.Text);
+                        decimal PineappleCost = PineappleTotal * PinePrice;
+                        try
+                        {
+                            int CalzoniTotal = int.Parse(CalzoniText.Text);
+                            decimal CalzoniCost = CalzoniTotal * CalPrice;
+
+                            OrderdedPizzas += MargeritaTotal + PepperoniTotal + CalzoniTotal +
+                                PineappleTotal;
+
+                            TableReceipts = MargeritaCost + PepperoniCost + PineappleCost +
+                                CalzoniCost;
+
+                            // transaction successfully completed, add 1
+                            TotalNumberTransactions += 1;
+                            // add sale value to total company sales from this transaction
+                            TotalSales += TableReceipts;
+                            // finally, add total number of pizzas sold from this transaction
+                            TotalNumberPizzasOrdered = MargeritaTotal + PepperoniTotal + PineappleTotal +
+                                CalzoniTotal;
+
+                            this.Text = "Table Summary";
+                            this.OrderSummaryGroupBox.Visible = true;
+                            ServerTextOrderSummary.Text = ServerTextBox.Text;
+                            OrderSummaryPizzas.Text = OrderdedPizzas.ToString();
+                            ReceiptsOrderSummary.Text = "€" + TableReceipts.ToString();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Expecting numeric values." +
+                                                    "\nInvalid value type for inputted Calzoni quantities.", "Invalid Input",
+                                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            CalzoniText.Focus();
+                            CalzoniText.SelectAll();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Expecting numeric values." +
+                                                "\nInvalid value type for inputted Pineapple quantities.", "Invalid Input",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        PineappleText.Focus();
+                        PineappleText.SelectAll();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Expecting numeric values." +
+                                            "\nInvalid value type for inputted Pepperoni quantities.", "Invalid Input",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    PepperoniText.Focus();
+                    PepperoniText.SelectAll();
+                }
             }
             catch
             {
@@ -78,56 +152,9 @@ namespace PizzaAppAttempt2
                                         "\nInvalid value type for inputted Margerita quantities.", "Invalid Input",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MargeritaText.Focus();
+                MargeritaText.SelectAll();
             }
-            try
-            {
-                int PepperoniTotal = int.Parse(PepperoniText.Text);
-                OrderdedPizzas += PepperoniTotal;
-                TableReceipts += PepperoniTotal * PeppPrice;
-            }
-            catch
-            {
-                MessageBox.Show("Expecting numeric values." +
-                                        "\nInvalid value type for inputted Pepperoni quantities.", "Invalid Input",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PepperoniText.Focus();
-            }
-
-            try
-            {
-                int PineappleTotal = int.Parse(PineappleText.Text);
-                OrderdedPizzas += PineappleTotal;
-                TableReceipts += PineappleTotal * PinePrice;
-            }
-            catch
-            {
-                MessageBox.Show("Expecting numeric values." +
-                                        "\nInvalid value type for inputted Pineapple quantities.", "Invalid Input",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PineappleText.Focus();
-            }
-
-            try
-            {
-                int CalzoniTotal = int.Parse(CalzoniText.Text);
-                OrderdedPizzas += CalzoniTotal;
-                TableReceipts += CalzoniTotal * CalPrice;
-            }
-            catch
-            {
-                MessageBox.Show("Expecting numeric values." +
-                                        "\nInvalid value type for inputted Calzoni quantities.", "Invalid Input",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                CalzoniText.Focus();
-            }
-
-            this.Text = "Table Summary";
-            this.OrderSummaryGroupBox.Visible = true;
-            ServerTextOrderSummary.Text = ServerTextBox.Text;
-            OrderSummaryPizzas.Text = OrderdedPizzas.ToString();
-            ReceiptsOrderSummary.Text = "€" + TableReceipts.ToString();
         }
-
         private void ClearButton_Click(object sender, EventArgs e)
         {
             OrderSummaryPizzas.Text = "0";
@@ -138,19 +165,39 @@ namespace PizzaAppAttempt2
             CalzoniText.Text = "0";
             TableReceipts = 0.00m;
             OrderdedPizzas = 0;
+            this.OrderSummaryGroupBox.Visible = false;
+            this.CompanySummaryGroupBox.Visible = false;
         }
-
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            this.OrderSummaryGroupBox.Visible = false;
             this.CompanySummaryGroupBox.Visible = true;
-
+            AverageSale = TotalSales / TotalNumberTransactions;
+            this.AverageTransactionText.Text = "€" + AverageSale.ToString("0.00");
+            this.TotalCompanyTransactionsText.Text = TotalNumberTransactions.ToString();
+            this.TotalPizzaOrderedTextBox.Text = TotalNumberPizzasOrdered.ToString();
+            this.TotalCompanyReceiptsTextBox.Text = "€" + TotalSales.ToString();
         }
-
+// more user friendly functions for orders
+// when text box is clicked all text present is selected making it easier to remove for new orders
+        private void MargeritaText_TextChanged(object sender, EventArgs e)
+        {
+            this.MargeritaText.SelectAll();
+        }
+        private void PineappleText_TextChanged(object sender, EventArgs e)
+        {
+            this.PineappleText.SelectAll();
+        }
+        private void CalzoniText_TextChanged(object sender, EventArgs e)
+        {
+            this.CalzoniText.SelectAll();
+        }
+        private void PepperoniText_TextChanged(object sender, EventArgs e)
+        {
+            this.PepperoniText.SelectAll();
+        }
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }

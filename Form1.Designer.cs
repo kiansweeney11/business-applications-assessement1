@@ -58,13 +58,8 @@
             this.ExitToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ClearToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.OrderSummaryGroupBox = new System.Windows.Forms.GroupBox();
-            this.ReceiptsOrderSummary = new System.Windows.Forms.TextBox();
-            this.OrderSummaryPizzas = new System.Windows.Forms.TextBox();
-            this.ServerTextOrderSummary = new System.Windows.Forms.TextBox();
-            this.OrderSummaryTableReceipts = new System.Windows.Forms.Label();
-            this.NumberPizzaOrderedOrderSum = new System.Windows.Forms.Label();
-            this.ServerOrderSummary = new System.Windows.Forms.Label();
             this.CompanySummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.TotalCompanyTransactionsLabel = new System.Windows.Forms.Label();
             this.AverageTransactionText = new System.Windows.Forms.TextBox();
             this.TotalCompanyReceiptsTextBox = new System.Windows.Forms.TextBox();
             this.TotalPizzaOrderedTextBox = new System.Windows.Forms.TextBox();
@@ -73,14 +68,18 @@
             this.TotalCompanyReceiptsSum = new System.Windows.Forms.Label();
             this.NumberOfPizzasOrder = new System.Windows.Forms.Label();
             this.TotalComTransactions = new System.Windows.Forms.Label();
-            this.PictureBoxStartMenu = new System.Windows.Forms.PictureBox();
+            this.ReceiptsOrderSummary = new System.Windows.Forms.TextBox();
+            this.OrderSummaryPizzas = new System.Windows.Forms.TextBox();
+            this.ServerTextOrderSummary = new System.Windows.Forms.TextBox();
+            this.OrderSummaryTableReceipts = new System.Windows.Forms.Label();
+            this.NumberPizzaOrderedOrderSum = new System.Windows.Forms.Label();
+            this.ServerOrderSummary = new System.Windows.Forms.Label();
             this.DefaultPanel.SuspendLayout();
             this.OrderGroupBox.SuspendLayout();
             this.OptionsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMainMenu)).BeginInit();
             this.OrderSummaryGroupBox.SuspendLayout();
             this.CompanySummaryGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxStartMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // DefaultPanel
@@ -220,6 +219,7 @@
             this.CalzoniText.Size = new System.Drawing.Size(72, 34);
             this.CalzoniText.TabIndex = 7;
             this.CalzoniText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CalzoniText.TextChanged += new System.EventHandler(this.CalzoniText_TextChanged);
             // 
             // PineappleText
             // 
@@ -229,6 +229,7 @@
             this.PineappleText.Size = new System.Drawing.Size(72, 34);
             this.PineappleText.TabIndex = 6;
             this.PineappleText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PineappleText.TextChanged += new System.EventHandler(this.PineappleText_TextChanged);
             // 
             // PepperoniText
             // 
@@ -238,6 +239,7 @@
             this.PepperoniText.Size = new System.Drawing.Size(72, 34);
             this.PepperoniText.TabIndex = 5;
             this.PepperoniText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PepperoniText.TextChanged += new System.EventHandler(this.PepperoniText_TextChanged);
             // 
             // MargeritaText
             // 
@@ -247,6 +249,7 @@
             this.MargeritaText.Size = new System.Drawing.Size(72, 34);
             this.MargeritaText.TabIndex = 4;
             this.MargeritaText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MargeritaText.TextChanged += new System.EventHandler(this.MargeritaText_TextChanged);
             // 
             // CalzoniLabel
             // 
@@ -291,7 +294,6 @@
             // OptionsPanel
             // 
             this.OptionsPanel.BackColor = System.Drawing.SystemColors.Window;
-            this.OptionsPanel.Controls.Add(this.PictureBoxStartMenu);
             this.OptionsPanel.Controls.Add(this.Exit);
             this.OptionsPanel.Controls.Add(this.SummaryButton);
             this.OptionsPanel.Controls.Add(this.ClearButton);
@@ -321,7 +323,7 @@
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(112, 34);
             this.SummaryButton.TabIndex = 2;
-            this.SummaryButton.Text = "S&ummary";
+            this.SummaryButton.Text = "Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
             this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
@@ -379,6 +381,7 @@
             // OrderSummaryGroupBox
             // 
             this.OrderSummaryGroupBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.OrderSummaryGroupBox.Controls.Add(this.CompanySummaryGroupBox);
             this.OrderSummaryGroupBox.Controls.Add(this.ReceiptsOrderSummary);
             this.OrderSummaryGroupBox.Controls.Add(this.OrderSummaryPizzas);
             this.OrderSummaryGroupBox.Controls.Add(this.ServerTextOrderSummary);
@@ -394,12 +397,115 @@
             this.OrderSummaryGroupBox.Text = "Table Order Summary Data";
             this.OrderSummaryGroupBox.Visible = false;
             // 
+            // CompanySummaryGroupBox
+            // 
+            this.CompanySummaryGroupBox.BackColor = System.Drawing.SystemColors.Window;
+            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyTransactionsLabel);
+            this.CompanySummaryGroupBox.Controls.Add(this.AverageTransactionText);
+            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyReceiptsTextBox);
+            this.CompanySummaryGroupBox.Controls.Add(this.TotalPizzaOrderedTextBox);
+            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyTransactionsText);
+            this.CompanySummaryGroupBox.Controls.Add(this.AverageTransactionVal);
+            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyReceiptsSum);
+            this.CompanySummaryGroupBox.Controls.Add(this.NumberOfPizzasOrder);
+            this.CompanySummaryGroupBox.Controls.Add(this.TotalComTransactions);
+            this.CompanySummaryGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CompanySummaryGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.CompanySummaryGroupBox.Name = "CompanySummaryGroupBox";
+            this.CompanySummaryGroupBox.Size = new System.Drawing.Size(728, 198);
+            this.CompanySummaryGroupBox.TabIndex = 6;
+            this.CompanySummaryGroupBox.TabStop = false;
+            this.CompanySummaryGroupBox.Text = "Company Summary Data";
+            this.CompanySummaryGroupBox.Visible = false;
+            // 
+            // TotalCompanyTransactionsLabel
+            // 
+            this.TotalCompanyTransactionsLabel.AutoSize = true;
+            this.TotalCompanyTransactionsLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotalCompanyTransactionsLabel.Location = new System.Drawing.Point(82, 33);
+            this.TotalCompanyTransactionsLabel.Name = "TotalCompanyTransactionsLabel";
+            this.TotalCompanyTransactionsLabel.Size = new System.Drawing.Size(303, 30);
+            this.TotalCompanyTransactionsLabel.TabIndex = 8;
+            this.TotalCompanyTransactionsLabel.Text = "Total Company Transactions";
+            // 
+            // AverageTransactionText
+            // 
+            this.AverageTransactionText.Location = new System.Drawing.Point(388, 154);
+            this.AverageTransactionText.Name = "AverageTransactionText";
+            this.AverageTransactionText.Size = new System.Drawing.Size(211, 31);
+            this.AverageTransactionText.TabIndex = 7;
+            this.AverageTransactionText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TotalCompanyReceiptsTextBox
+            // 
+            this.TotalCompanyReceiptsTextBox.Location = new System.Drawing.Point(388, 114);
+            this.TotalCompanyReceiptsTextBox.Name = "TotalCompanyReceiptsTextBox";
+            this.TotalCompanyReceiptsTextBox.Size = new System.Drawing.Size(211, 31);
+            this.TotalCompanyReceiptsTextBox.TabIndex = 6;
+            this.TotalCompanyReceiptsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TotalPizzaOrderedTextBox
+            // 
+            this.TotalPizzaOrderedTextBox.Location = new System.Drawing.Point(388, 74);
+            this.TotalPizzaOrderedTextBox.Name = "TotalPizzaOrderedTextBox";
+            this.TotalPizzaOrderedTextBox.Size = new System.Drawing.Size(211, 31);
+            this.TotalPizzaOrderedTextBox.TabIndex = 5;
+            this.TotalPizzaOrderedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TotalCompanyTransactionsText
+            // 
+            this.TotalCompanyTransactionsText.Location = new System.Drawing.Point(388, 34);
+            this.TotalCompanyTransactionsText.Name = "TotalCompanyTransactionsText";
+            this.TotalCompanyTransactionsText.Size = new System.Drawing.Size(211, 31);
+            this.TotalCompanyTransactionsText.TabIndex = 4;
+            this.TotalCompanyTransactionsText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // AverageTransactionVal
+            // 
+            this.AverageTransactionVal.AutoSize = true;
+            this.AverageTransactionVal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AverageTransactionVal.Location = new System.Drawing.Point(82, 153);
+            this.AverageTransactionVal.Name = "AverageTransactionVal";
+            this.AverageTransactionVal.Size = new System.Drawing.Size(241, 30);
+            this.AverageTransactionVal.TabIndex = 3;
+            this.AverageTransactionVal.Text = "Avg Transaction Value";
+            // 
+            // TotalCompanyReceiptsSum
+            // 
+            this.TotalCompanyReceiptsSum.AutoSize = true;
+            this.TotalCompanyReceiptsSum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotalCompanyReceiptsSum.Location = new System.Drawing.Point(81, 111);
+            this.TotalCompanyReceiptsSum.Name = "TotalCompanyReceiptsSum";
+            this.TotalCompanyReceiptsSum.Size = new System.Drawing.Size(261, 30);
+            this.TotalCompanyReceiptsSum.TabIndex = 2;
+            this.TotalCompanyReceiptsSum.Text = "Total Company Receipts";
+            // 
+            // NumberOfPizzasOrder
+            // 
+            this.NumberOfPizzasOrder.AutoSize = true;
+            this.NumberOfPizzasOrder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NumberOfPizzasOrder.Location = new System.Drawing.Point(82, 73);
+            this.NumberOfPizzasOrder.Name = "NumberOfPizzasOrder";
+            this.NumberOfPizzasOrder.Size = new System.Drawing.Size(266, 30);
+            this.NumberOfPizzasOrder.TabIndex = 1;
+            this.NumberOfPizzasOrder.Text = "Number Pizza\'s Ordered";
+            // 
+            // TotalComTransactions
+            // 
+            this.TotalComTransactions.AutoSize = true;
+            this.TotalComTransactions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotalComTransactions.Location = new System.Drawing.Point(76, 6);
+            this.TotalComTransactions.Name = "TotalComTransactions";
+            this.TotalComTransactions.Size = new System.Drawing.Size(0, 30);
+            this.TotalComTransactions.TabIndex = 0;
+            // 
             // ReceiptsOrderSummary
             // 
             this.ReceiptsOrderSummary.Location = new System.Drawing.Point(403, 122);
             this.ReceiptsOrderSummary.Name = "ReceiptsOrderSummary";
             this.ReceiptsOrderSummary.Size = new System.Drawing.Size(150, 31);
             this.ReceiptsOrderSummary.TabIndex = 5;
+            this.ReceiptsOrderSummary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OrderSummaryPizzas
             // 
@@ -407,6 +513,7 @@
             this.OrderSummaryPizzas.Name = "OrderSummaryPizzas";
             this.OrderSummaryPizzas.Size = new System.Drawing.Size(150, 31);
             this.OrderSummaryPizzas.TabIndex = 4;
+            this.OrderSummaryPizzas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ServerTextOrderSummary
             // 
@@ -414,6 +521,7 @@
             this.ServerTextOrderSummary.Name = "ServerTextOrderSummary";
             this.ServerTextOrderSummary.Size = new System.Drawing.Size(150, 31);
             this.ServerTextOrderSummary.TabIndex = 3;
+            this.ServerTextOrderSummary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OrderSummaryTableReceipts
             // 
@@ -445,111 +553,12 @@
             this.ServerOrderSummary.TabIndex = 0;
             this.ServerOrderSummary.Text = "Server Name";
             // 
-            // CompanySummaryGroupBox
-            // 
-            this.CompanySummaryGroupBox.BackColor = System.Drawing.SystemColors.Window;
-            this.CompanySummaryGroupBox.Controls.Add(this.AverageTransactionText);
-            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyReceiptsTextBox);
-            this.CompanySummaryGroupBox.Controls.Add(this.TotalPizzaOrderedTextBox);
-            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyTransactionsText);
-            this.CompanySummaryGroupBox.Controls.Add(this.AverageTransactionVal);
-            this.CompanySummaryGroupBox.Controls.Add(this.TotalCompanyReceiptsSum);
-            this.CompanySummaryGroupBox.Controls.Add(this.NumberOfPizzasOrder);
-            this.CompanySummaryGroupBox.Controls.Add(this.TotalComTransactions);
-            this.CompanySummaryGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CompanySummaryGroupBox.Location = new System.Drawing.Point(31, 336);
-            this.CompanySummaryGroupBox.Name = "CompanySummaryGroupBox";
-            this.CompanySummaryGroupBox.Size = new System.Drawing.Size(728, 198);
-            this.CompanySummaryGroupBox.TabIndex = 6;
-            this.CompanySummaryGroupBox.TabStop = false;
-            this.CompanySummaryGroupBox.Text = "Company Summary Data";
-            this.CompanySummaryGroupBox.Visible = false;
-            // 
-            // AverageTransactionText
-            // 
-            this.AverageTransactionText.Location = new System.Drawing.Point(392, 147);
-            this.AverageTransactionText.Name = "AverageTransactionText";
-            this.AverageTransactionText.Size = new System.Drawing.Size(211, 31);
-            this.AverageTransactionText.TabIndex = 7;
-            // 
-            // TotalCompanyReceiptsTextBox
-            // 
-            this.TotalCompanyReceiptsTextBox.Location = new System.Drawing.Point(392, 107);
-            this.TotalCompanyReceiptsTextBox.Name = "TotalCompanyReceiptsTextBox";
-            this.TotalCompanyReceiptsTextBox.Size = new System.Drawing.Size(211, 31);
-            this.TotalCompanyReceiptsTextBox.TabIndex = 6;
-            // 
-            // TotalPizzaOrderedTextBox
-            // 
-            this.TotalPizzaOrderedTextBox.Location = new System.Drawing.Point(392, 67);
-            this.TotalPizzaOrderedTextBox.Name = "TotalPizzaOrderedTextBox";
-            this.TotalPizzaOrderedTextBox.Size = new System.Drawing.Size(211, 31);
-            this.TotalPizzaOrderedTextBox.TabIndex = 5;
-            // 
-            // TotalCompanyTransactionsText
-            // 
-            this.TotalCompanyTransactionsText.Location = new System.Drawing.Point(392, 27);
-            this.TotalCompanyTransactionsText.Name = "TotalCompanyTransactionsText";
-            this.TotalCompanyTransactionsText.Size = new System.Drawing.Size(211, 31);
-            this.TotalCompanyTransactionsText.TabIndex = 4;
-            // 
-            // AverageTransactionVal
-            // 
-            this.AverageTransactionVal.AutoSize = true;
-            this.AverageTransactionVal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AverageTransactionVal.Location = new System.Drawing.Point(81, 146);
-            this.AverageTransactionVal.Name = "AverageTransactionVal";
-            this.AverageTransactionVal.Size = new System.Drawing.Size(241, 30);
-            this.AverageTransactionVal.TabIndex = 3;
-            this.AverageTransactionVal.Text = "Avg Transaction Value";
-            // 
-            // TotalCompanyReceiptsSum
-            // 
-            this.TotalCompanyReceiptsSum.AutoSize = true;
-            this.TotalCompanyReceiptsSum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TotalCompanyReceiptsSum.Location = new System.Drawing.Point(81, 108);
-            this.TotalCompanyReceiptsSum.Name = "TotalCompanyReceiptsSum";
-            this.TotalCompanyReceiptsSum.Size = new System.Drawing.Size(261, 30);
-            this.TotalCompanyReceiptsSum.TabIndex = 2;
-            this.TotalCompanyReceiptsSum.Text = "Total Company Receipts";
-            // 
-            // NumberOfPizzasOrder
-            // 
-            this.NumberOfPizzasOrder.AutoSize = true;
-            this.NumberOfPizzasOrder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumberOfPizzasOrder.Location = new System.Drawing.Point(81, 70);
-            this.NumberOfPizzasOrder.Name = "NumberOfPizzasOrder";
-            this.NumberOfPizzasOrder.Size = new System.Drawing.Size(266, 30);
-            this.NumberOfPizzasOrder.TabIndex = 1;
-            this.NumberOfPizzasOrder.Text = "Number Pizza\'s Ordered";
-            // 
-            // TotalComTransactions
-            // 
-            this.TotalComTransactions.AutoSize = true;
-            this.TotalComTransactions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TotalComTransactions.Location = new System.Drawing.Point(81, 32);
-            this.TotalComTransactions.Name = "TotalComTransactions";
-            this.TotalComTransactions.Size = new System.Drawing.Size(303, 30);
-            this.TotalComTransactions.TabIndex = 0;
-            this.TotalComTransactions.Text = "Total Company Transactions";
-            // 
-            // PictureBoxStartMenu
-            // 
-            this.PictureBoxStartMenu.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxStartMenu.Image")));
-            this.PictureBoxStartMenu.Location = new System.Drawing.Point(215, -51);
-            this.PictureBoxStartMenu.Name = "PictureBoxStartMenu";
-            this.PictureBoxStartMenu.Size = new System.Drawing.Size(268, 105);
-            this.PictureBoxStartMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PictureBoxStartMenu.TabIndex = 11;
-            this.PictureBoxStartMenu.TabStop = false;
-            // 
             // PizzaOrderApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 669);
-            this.Controls.Add(this.CompanySummaryGroupBox);
             this.Controls.Add(this.OrderSummaryGroupBox);
             this.Controls.Add(this.PictureBoxMainMenu);
             this.Controls.Add(this.OptionsPanel);
@@ -563,13 +572,11 @@
             this.OrderGroupBox.ResumeLayout(false);
             this.OrderGroupBox.PerformLayout();
             this.OptionsPanel.ResumeLayout(false);
-            this.OptionsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMainMenu)).EndInit();
             this.OrderSummaryGroupBox.ResumeLayout(false);
             this.OrderSummaryGroupBox.PerformLayout();
             this.CompanySummaryGroupBox.ResumeLayout(false);
             this.CompanySummaryGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxStartMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,6 +627,6 @@
         private TextBox TotalPizzaOrderedTextBox;
         private TextBox TotalCompanyReceiptsTextBox;
         private TextBox AverageTransactionText;
-        private PictureBox PictureBoxStartMenu;
+        private Label TotalCompanyTransactionsLabel;
     }
 }
