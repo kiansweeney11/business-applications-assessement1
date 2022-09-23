@@ -54,6 +54,7 @@
             this.SummaryButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.OrderButton = new System.Windows.Forms.Button();
+            this.StarterPictureBox = new System.Windows.Forms.PictureBox();
             this.PictureBoxMainMenu = new System.Windows.Forms.PictureBox();
             this.ExitToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ClearToolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -77,6 +78,7 @@
             this.DefaultPanel.SuspendLayout();
             this.OrderGroupBox.SuspendLayout();
             this.OptionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StarterPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMainMenu)).BeginInit();
             this.OrderSummaryGroupBox.SuspendLayout();
             this.CompanySummaryGroupBox.SuspendLayout();
@@ -354,6 +356,16 @@
             this.OrderButton.UseVisualStyleBackColor = false;
             this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
+            // StarterPictureBox
+            // 
+            this.StarterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("StarterPictureBox.Image")));
+            this.StarterPictureBox.Location = new System.Drawing.Point(247, 176);
+            this.StarterPictureBox.Name = "StarterPictureBox";
+            this.StarterPictureBox.Size = new System.Drawing.Size(268, 105);
+            this.StarterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.StarterPictureBox.TabIndex = 12;
+            this.StarterPictureBox.TabStop = false;
+            // 
             // PictureBoxMainMenu
             // 
             this.PictureBoxMainMenu.BackColor = System.Drawing.SystemColors.Window;
@@ -563,6 +575,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 669);
+            this.Controls.Add(this.StarterPictureBox);
             this.Controls.Add(this.OrderSummaryGroupBox);
             this.Controls.Add(this.PictureBoxMainMenu);
             this.Controls.Add(this.OptionsPanel);
@@ -576,6 +589,7 @@
             this.OrderGroupBox.ResumeLayout(false);
             this.OrderGroupBox.PerformLayout();
             this.OptionsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.StarterPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMainMenu)).EndInit();
             this.OrderSummaryGroupBox.ResumeLayout(false);
             this.OrderSummaryGroupBox.PerformLayout();
@@ -632,5 +646,6 @@
         private TextBox TotalCompanyReceiptsTextBox;
         private TextBox AverageTransactionText;
         private Label TotalCompanyTransactionsLabel;
+        private PictureBox StarterPictureBox;
     }
 }

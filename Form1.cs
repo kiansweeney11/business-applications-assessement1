@@ -2,7 +2,6 @@
 // ID: 22220670
 // MS806 Assignment 1
 // Due Date: 30/9/22
-using System.Net.NetworkInformation;
 namespace PizzaAppAttempt2
 {
     public partial class PizzaOrderApp : Form
@@ -47,6 +46,7 @@ namespace PizzaAppAttempt2
                 {
                     int TableNo = int.Parse(TableNumberTextBox.Text);
                     this.DefaultPanel.Visible = false;
+                    this.StarterPictureBox.Visible = false;
                     this.OrderGroupBox.Visible = true;
                     this.OptionsPanel.Visible = true;
                     // change title of app dynamically
@@ -169,8 +169,14 @@ namespace PizzaAppAttempt2
             OrderdedPizzas = 0;
             this.OrderSummaryGroupBox.Visible = false;
             this.CompanySummaryGroupBox.Visible = false;
+            this.OrderGroupBox.Visible = false;
+            this.OptionsPanel.Visible = false;
+            this.PictureBoxMainMenu.Visible = false;
+            this.StarterPictureBox.Visible = true;
+            this.DefaultPanel.Visible = true;
+            this.ServerTextBox.Text = "";
+            this.TableNumberTextBox.Text = "";
         }
-
         // summary button clicked function
         private void SummaryButton_Click(object sender, EventArgs e)
         {
