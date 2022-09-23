@@ -2,7 +2,7 @@
 // ID: 22220670
 // MS806 Assignment 1
 // Due Date: 30/9/22
-// 
+using System.Net.NetworkInformation;
 namespace PizzaAppAttempt2
 {
     public partial class PizzaOrderApp : Form
@@ -55,7 +55,6 @@ namespace PizzaAppAttempt2
                     PepperoniText.Text = "0";
                     PineappleText.Text = "0";
                     CalzoniText.Text = "0";
-                    //this.PictureBoxStartMenu.Visible = false;
                     this.PictureBoxMainMenu.Visible = true;
                     MargeritaText.Focus();
                 }
@@ -157,6 +156,9 @@ namespace PizzaAppAttempt2
         }
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            // reset values back to zero on order panel and pizza quantity panel when
+            // clear button is selected
+            // also make order/company summary groupbox's invisible (for if they are currently present)
             OrderSummaryPizzas.Text = "0";
             ReceiptsOrderSummary.Text = "€0.00";
             MargeritaText.Text = "0";
@@ -168,32 +170,47 @@ namespace PizzaAppAttempt2
             this.OrderSummaryGroupBox.Visible = false;
             this.CompanySummaryGroupBox.Visible = false;
         }
+
+        // summary button clicked function
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            this.CompanySummaryGroupBox.Visible = true;
-            AverageSale = TotalSales / TotalNumberTransactions;
-            this.AverageTransactionText.Text = "€" + AverageSale.ToString("0.00");
-            this.TotalCompanyTransactionsText.Text = TotalNumberTransactions.ToString();
-            this.TotalPizzaOrderedTextBox.Text = TotalNumberPizzasOrdered.ToString();
-            this.TotalCompanyReceiptsTextBox.Text = "€" + TotalSales.ToString();
+            // as per specifications -> If the user presses the Summary button,
+            // the application (if at least one transaction has taken place
+            // prior to being pressed) displays the total number of transactions and so forth
+            // if statement to handle if there has been transactions or not
+            if (TotalNumberTransactions > 0)
+            {
+                this.CompanySummaryGroupBox.Visible = true;
+                AverageSale = TotalSales / TotalNumberTransactions;
+                this.AverageTransactionText.Text = "€" + AverageSale.ToString("0.00");
+                this.TotalCompanyTransactionsText.Text = TotalNumberTransactions.ToString();
+                this.TotalPizzaOrderedTextBox.Text = TotalNumberPizzasOrdered.ToString();
+                this.TotalCompanyReceiptsTextBox.Text = "€" + TotalSales.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No Transactions Present on The System.", "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
         }
 // more user friendly functions for orders
 // when text box is clicked all text present is selected making it easier to remove for new orders
         private void MargeritaText_TextChanged(object sender, EventArgs e)
         {
-            this.MargeritaText.SelectAll();
+            this.MargeritaText.Focus();
         }
         private void PineappleText_TextChanged(object sender, EventArgs e)
         {
-            this.PineappleText.SelectAll();
+            this.PineappleText.Focus();
         }
         private void CalzoniText_TextChanged(object sender, EventArgs e)
         {
-            this.CalzoniText.SelectAll();
+            this.CalzoniText.Focus();
         }
         private void PepperoniText_TextChanged(object sender, EventArgs e)
         {
-            this.PepperoniText.SelectAll();
+            this.PepperoniText.Focus();
         }
         private void Exit_Click(object sender, EventArgs e)
         {

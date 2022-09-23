@@ -306,6 +306,7 @@
             // 
             // Exit
             // 
+            this.Exit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Exit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Exit.Location = new System.Drawing.Point(545, 20);
             this.Exit.Name = "Exit";
@@ -313,22 +314,24 @@
             this.Exit.TabIndex = 3;
             this.Exit.Text = "E&xit";
             this.ExitToolTip.SetToolTip(this.Exit, "Press to exit application.");
-            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.UseVisualStyleBackColor = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // SummaryButton
             // 
+            this.SummaryButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.SummaryButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SummaryButton.Location = new System.Drawing.Point(387, 20);
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(112, 34);
             this.SummaryButton.TabIndex = 2;
             this.SummaryButton.Text = "Summary";
-            this.SummaryButton.UseVisualStyleBackColor = true;
+            this.SummaryButton.UseVisualStyleBackColor = false;
             this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
             // ClearButton
             // 
+            this.ClearButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ClearButton.Location = new System.Drawing.Point(229, 20);
             this.ClearButton.Name = "ClearButton";
@@ -336,18 +339,19 @@
             this.ClearButton.TabIndex = 1;
             this.ClearButton.Text = "C&lear";
             this.ClearToolTip.SetToolTip(this.ClearButton, "Press to Clear Form for New Order.");
-            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // OrderButton
             // 
+            this.OrderButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.OrderButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OrderButton.Location = new System.Drawing.Point(71, 20);
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(112, 34);
             this.OrderButton.TabIndex = 0;
             this.OrderButton.Text = "O&rder";
-            this.OrderButton.UseVisualStyleBackColor = true;
+            this.OrderButton.UseVisualStyleBackColor = false;
             this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // PictureBoxMainMenu
