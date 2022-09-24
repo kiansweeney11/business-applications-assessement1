@@ -314,7 +314,7 @@
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(112, 34);
             this.Exit.TabIndex = 3;
-            this.Exit.Text = "E&xit";
+            this.Exit.Text = "&Exit";
             this.ExitToolTip.SetToolTip(this.Exit, "Press to exit application.");
             this.Exit.UseVisualStyleBackColor = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
@@ -327,7 +327,7 @@
             this.SummaryButton.Name = "SummaryButton";
             this.SummaryButton.Size = new System.Drawing.Size(112, 34);
             this.SummaryButton.TabIndex = 2;
-            this.SummaryButton.Text = "Summary";
+            this.SummaryButton.Text = "&Summary";
             this.SummaryButton.UseVisualStyleBackColor = false;
             this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
@@ -339,7 +339,7 @@
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(112, 34);
             this.ClearButton.TabIndex = 1;
-            this.ClearButton.Text = "C&lear";
+            this.ClearButton.Text = "&Clear";
             this.ClearToolTip.SetToolTip(this.ClearButton, "Press to Clear Form for New Order.");
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -352,7 +352,7 @@
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(112, 34);
             this.OrderButton.TabIndex = 0;
-            this.OrderButton.Text = "O&rder";
+            this.OrderButton.Text = "&Order";
             this.OrderButton.UseVisualStyleBackColor = false;
             this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 

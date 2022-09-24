@@ -2,6 +2,9 @@
 // ID: 22220670
 // MS806 Assignment 1
 // Due Date: 30/9/22
+// Simple Table Order App
+// Create a well-designed application that allows “PizzaBothán” staff
+// to take table orders from customers.
 namespace PizzaAppAttempt2
 {
     public partial class PizzaOrderApp : Form
@@ -18,7 +21,7 @@ namespace PizzaAppAttempt2
         private int TotalNumberTransactions, TotalNumberPizzasOrdered;
 
         // initialise varaibles for order summary
-        private int OrderdedPizzas;
+        private int OrderdedPizzas, CurrentServerOrderTotal;
         private decimal TableReceipts;
 
         public PizzaOrderApp()
@@ -84,39 +87,38 @@ namespace PizzaAppAttempt2
             try
             {
                 int MargeritaTotal = int.Parse(MargeritaText.Text);
-                decimal MargeritaCost = MargeritaTotal * MarPrice;
                 try
                 {
                     int PepperoniTotal = int.Parse(PepperoniText.Text);
-                    decimal PepperoniCost = PepperoniTotal * PeppPrice;
                     try
                     {
                         int PineappleTotal = int.Parse(PineappleText.Text);
-                        decimal PineappleCost = PineappleTotal * PinePrice;
                         try
                         {
                             int CalzoniTotal = int.Parse(CalzoniText.Text);
-                            decimal CalzoniCost = CalzoniTotal * CalPrice;
 
-                            OrderdedPizzas += MargeritaTotal + PepperoniTotal + CalzoniTotal +
+                            OrderdedPizzas = MargeritaTotal + PepperoniTotal + CalzoniTotal +
                                 PineappleTotal;
 
-                            TableReceipts = MargeritaCost + PepperoniCost + PineappleCost +
-                                CalzoniCost;
+                            // had an issue that if one server had two tranasctions
+                            // that ordered 1 pizza then 2 pizzas the total would appear as 4 for example
+                            // this variable is used to deal exclusively with a server's pizza
+                            // count. this is reset in the clear button then
+                            CurrentServerOrderTotal += OrderdedPizzas;
 
+                            TableReceipts = MarPrice * MargeritaTotal + PeppPrice * PepperoniTotal +
+                                PinePrice * PineappleTotal + CalPrice * CalzoniTotal;
                             // transaction successfully completed, add 1
                             TotalNumberTransactions += 1;
                             // add sale value to total company sales from this transaction
                             TotalSales += TableReceipts;
                             // finally, add total number of pizzas sold from this transaction
-                            TotalNumberPizzasOrdered = MargeritaTotal + PepperoniTotal + PineappleTotal +
-                                CalzoniTotal;
-
+                            TotalNumberPizzasOrdered += OrderdedPizzas;
                             this.Text = "Table Summary";
                             this.OrderSummaryGroupBox.Visible = true;
                             ServerTextOrderSummary.Text = ServerTextBox.Text;
-                            OrderSummaryPizzas.Text = OrderdedPizzas.ToString();
-                            ReceiptsOrderSummary.Text = "€" + TableReceipts.ToString();
+                            OrderSummaryPizzas.Text = CurrentServerOrderTotal.ToString();
+                            ReceiptsOrderSummary.Text = "€" + TotalSales.ToString();
                         }
                         catch
                         {
@@ -159,14 +161,15 @@ namespace PizzaAppAttempt2
             // reset values back to zero on order panel and pizza quantity panel when
             // clear button is selected
             // also make order/company summary groupbox's invisible (for if they are currently present)
-            OrderSummaryPizzas.Text = "0";
-            ReceiptsOrderSummary.Text = "€0.00";
+            //OrderSummaryPizzas.Text = "0";
+            //ReceiptsOrderSummary.Text = "€0.00";
             MargeritaText.Text = "0";
             PepperoniText.Text = "0";
             PineappleText.Text = "0";
             CalzoniText.Text = "0";
             TableReceipts = 0.00m;
             OrderdedPizzas = 0;
+            CurrentServerOrderTotal = 0;
             this.OrderSummaryGroupBox.Visible = false;
             this.CompanySummaryGroupBox.Visible = false;
             this.OrderGroupBox.Visible = false;
@@ -180,9 +183,9 @@ namespace PizzaAppAttempt2
         // summary button clicked function
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            // as per specifications -> If the user presses the Summary button,
+            // as per specifications -> "If the user presses the Summary button,
             // the application (if at least one transaction has taken place
-            // prior to being pressed) displays the total number of transactions and so forth
+            // prior to being pressed) displays the total number of transactions" and so forth
             // if statement to handle if there has been transactions or not
             if (TotalNumberTransactions > 0)
             {
