@@ -22,7 +22,7 @@ namespace PizzaAppAttempt2
 
         // initialise varaibles for order summary
         private int OrderdedPizzas, CurrentServerOrderTotal;
-        private decimal TableReceipts;
+        private decimal TableReceipts, CurrentServerOrderPriceTotal;
 
         public PizzaOrderApp()
         {
@@ -108,6 +108,8 @@ namespace PizzaAppAttempt2
 
                             TableReceipts = MarPrice * MargeritaTotal + PeppPrice * PepperoniTotal +
                                 PinePrice * PineappleTotal + CalPrice * CalzoniTotal;
+
+                            CurrentServerOrderPriceTotal += TableReceipts;
                             // transaction successfully completed, add 1
                             TotalNumberTransactions += 1;
                             // add sale value to total company sales from this transaction
@@ -118,7 +120,7 @@ namespace PizzaAppAttempt2
                             this.OrderSummaryGroupBox.Visible = true;
                             ServerTextOrderSummary.Text = ServerTextBox.Text;
                             OrderSummaryPizzas.Text = CurrentServerOrderTotal.ToString();
-                            ReceiptsOrderSummary.Text = "€" + TotalSales.ToString();
+                            ReceiptsOrderSummary.Text = "€" + CurrentServerOrderPriceTotal.ToString();
                         }
                         catch
                         {
@@ -161,8 +163,6 @@ namespace PizzaAppAttempt2
             // reset values back to zero on order panel and pizza quantity panel when
             // clear button is selected
             // also make order/company summary groupbox's invisible (for if they are currently present)
-            //OrderSummaryPizzas.Text = "0";
-            //ReceiptsOrderSummary.Text = "€0.00";
             MargeritaText.Text = "0";
             PepperoniText.Text = "0";
             PineappleText.Text = "0";
@@ -170,6 +170,7 @@ namespace PizzaAppAttempt2
             TableReceipts = 0.00m;
             OrderdedPizzas = 0;
             CurrentServerOrderTotal = 0;
+            CurrentServerOrderPriceTotal = 0;
             this.OrderSummaryGroupBox.Visible = false;
             this.CompanySummaryGroupBox.Visible = false;
             this.OrderGroupBox.Visible = false;
@@ -191,6 +192,7 @@ namespace PizzaAppAttempt2
             {
                 this.CompanySummaryGroupBox.Visible = true;
                 AverageSale = TotalSales / TotalNumberTransactions;
+                this.Text = "Company Summary Data";
                 this.AverageTransactionText.Text = "€" + AverageSale.ToString("0.00");
                 this.TotalCompanyTransactionsText.Text = TotalNumberTransactions.ToString();
                 this.TotalPizzaOrderedTextBox.Text = TotalNumberPizzasOrdered.ToString();
