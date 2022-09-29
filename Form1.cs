@@ -19,6 +19,7 @@ namespace PizzaAppAttempt2
         // initialise variables for required company statistics
         private decimal AverageSale, TotalSales;
         private int TotalNumberTransactions, TotalNumberPizzasOrdered;
+        private int HistoryMargerita, HistoryPepperoini, HistoryPineapple, HistoryCalzoni;
 
         // initialise varaibles for order summary
         private int OrderdedPizzas, CurrentServerOrderTotal;
@@ -83,7 +84,6 @@ namespace PizzaAppAttempt2
             this.OrderSummaryGroupBox.Visible = true;
             // setting these visibility settings here in case someone orders, then checks
             // total company transactions then goes back to hit order again.
-            this.CompanySummaryGroupBox.Visible = false;
             try
             {
                 int MargeritaTotal = int.Parse(MargeritaText.Text);
@@ -105,6 +105,10 @@ namespace PizzaAppAttempt2
                             // this variable is used to deal exclusively with a server's pizza
                             // count. this is reset in the clear button then
                             CurrentServerOrderTotal += OrderdedPizzas;
+                            HistoryMargerita += MargeritaTotal;
+                            HistoryPepperoini += PepperoniTotal;
+                            HistoryPineapple += PineappleTotal;
+                            HistoryCalzoni += CalzoniTotal;
 
                             TableReceipts = MarPrice * MargeritaTotal + PeppPrice * PepperoniTotal +
                                 PinePrice * PineappleTotal + CalPrice * CalzoniTotal;
@@ -171,8 +175,10 @@ namespace PizzaAppAttempt2
             OrderdedPizzas = 0;
             CurrentServerOrderTotal = 0;
             CurrentServerOrderPriceTotal = 0;
+            // if tabs present hide
             this.OrderSummaryGroupBox.Visible = false;
             this.CompanySummaryGroupBox.Visible = false;
+            this.SummaryGroupBox.Visible = false;
             this.OrderGroupBox.Visible = false;
             this.OptionsPanel.Visible = false;
             this.PictureBoxMainMenu.Visible = false;
@@ -193,6 +199,14 @@ namespace PizzaAppAttempt2
                 this.CompanySummaryGroupBox.Visible = true;
                 AverageSale = TotalSales / TotalNumberTransactions;
                 this.Text = "Company Summary Data";
+                this.SummaryGroupBox.Visible = true;
+                // edit order box properties
+                // get historical pizzas sold per type
+                HistoryMar.Text = HistoryMargerita.ToString();
+                HistoryPepper.Text = HistoryPepperoini.ToString();
+                HistoryPine.Text = HistoryPineapple.ToString();
+                HistoryCal.Text = HistoryCalzoni.ToString();
+                // final touches - summary statistics
                 this.AverageTransactionText.Text = "€" + AverageSale.ToString("0.00");
                 this.TotalCompanyTransactionsText.Text = TotalNumberTransactions.ToString();
                 this.TotalPizzaOrderedTextBox.Text = TotalNumberPizzasOrdered.ToString();

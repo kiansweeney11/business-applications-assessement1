@@ -75,6 +75,15 @@
             this.OrderSummaryTableReceipts = new System.Windows.Forms.Label();
             this.NumberPizzaOrderedOrderSum = new System.Windows.Forms.Label();
             this.ServerOrderSummary = new System.Windows.Forms.Label();
+            this.SummaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.HistoryCal = new System.Windows.Forms.TextBox();
+            this.HistoryPine = new System.Windows.Forms.TextBox();
+            this.HistoryPepper = new System.Windows.Forms.TextBox();
+            this.HistoryMar = new System.Windows.Forms.TextBox();
+            this.HistoryCalLabel = new System.Windows.Forms.Label();
+            this.HistoryPineLabel = new System.Windows.Forms.Label();
+            this.HistoryPeppLabel = new System.Windows.Forms.Label();
+            this.HistoryMarLabel = new System.Windows.Forms.Label();
             this.DefaultPanel.SuspendLayout();
             this.OrderGroupBox.SuspendLayout();
             this.OptionsPanel.SuspendLayout();
@@ -82,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMainMenu)).BeginInit();
             this.OrderSummaryGroupBox.SuspendLayout();
             this.CompanySummaryGroupBox.SuspendLayout();
+            this.SummaryGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // DefaultPanel
@@ -569,12 +579,109 @@
             this.ServerOrderSummary.TabIndex = 0;
             this.ServerOrderSummary.Text = "Server Name";
             // 
+            // SummaryGroupBox
+            // 
+            this.SummaryGroupBox.BackColor = System.Drawing.SystemColors.Window;
+            this.SummaryGroupBox.Controls.Add(this.HistoryCal);
+            this.SummaryGroupBox.Controls.Add(this.HistoryPine);
+            this.SummaryGroupBox.Controls.Add(this.HistoryPepper);
+            this.SummaryGroupBox.Controls.Add(this.HistoryMar);
+            this.SummaryGroupBox.Controls.Add(this.HistoryCalLabel);
+            this.SummaryGroupBox.Controls.Add(this.HistoryPineLabel);
+            this.SummaryGroupBox.Controls.Add(this.HistoryPeppLabel);
+            this.SummaryGroupBox.Controls.Add(this.HistoryMarLabel);
+            this.SummaryGroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SummaryGroupBox.Location = new System.Drawing.Point(31, 22);
+            this.SummaryGroupBox.Name = "SummaryGroupBox";
+            this.SummaryGroupBox.Size = new System.Drawing.Size(728, 217);
+            this.SummaryGroupBox.TabIndex = 11;
+            this.SummaryGroupBox.TabStop = false;
+            this.SummaryGroupBox.Text = "Total Pizza\'s Sold";
+            this.SummaryGroupBox.Visible = false;
+            // 
+            // HistoryCal
+            // 
+            this.HistoryCal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryCal.Location = new System.Drawing.Point(344, 165);
+            this.HistoryCal.Name = "HistoryCal";
+            this.HistoryCal.Size = new System.Drawing.Size(72, 34);
+            this.HistoryCal.TabIndex = 15;
+            this.HistoryCal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // HistoryPine
+            // 
+            this.HistoryPine.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryPine.Location = new System.Drawing.Point(344, 122);
+            this.HistoryPine.Name = "HistoryPine";
+            this.HistoryPine.Size = new System.Drawing.Size(72, 34);
+            this.HistoryPine.TabIndex = 14;
+            this.HistoryPine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // HistoryPepper
+            // 
+            this.HistoryPepper.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryPepper.Location = new System.Drawing.Point(344, 79);
+            this.HistoryPepper.Name = "HistoryPepper";
+            this.HistoryPepper.Size = new System.Drawing.Size(72, 34);
+            this.HistoryPepper.TabIndex = 13;
+            this.HistoryPepper.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // HistoryMar
+            // 
+            this.HistoryMar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryMar.Location = new System.Drawing.Point(344, 36);
+            this.HistoryMar.Name = "HistoryMar";
+            this.HistoryMar.Size = new System.Drawing.Size(72, 34);
+            this.HistoryMar.TabIndex = 12;
+            this.HistoryMar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // HistoryCalLabel
+            // 
+            this.HistoryCalLabel.AutoSize = true;
+            this.HistoryCalLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryCalLabel.Location = new System.Drawing.Point(112, 166);
+            this.HistoryCalLabel.Name = "HistoryCalLabel";
+            this.HistoryCalLabel.Size = new System.Drawing.Size(148, 30);
+            this.HistoryCalLabel.TabIndex = 11;
+            this.HistoryCalLabel.Text = "Calzoni Pizza";
+            // 
+            // HistoryPineLabel
+            // 
+            this.HistoryPineLabel.AutoSize = true;
+            this.HistoryPineLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryPineLabel.Location = new System.Drawing.Point(112, 124);
+            this.HistoryPineLabel.Name = "HistoryPineLabel";
+            this.HistoryPineLabel.Size = new System.Drawing.Size(176, 30);
+            this.HistoryPineLabel.TabIndex = 10;
+            this.HistoryPineLabel.Text = "Pineapple Pizza";
+            // 
+            // HistoryPeppLabel
+            // 
+            this.HistoryPeppLabel.AutoSize = true;
+            this.HistoryPeppLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryPeppLabel.Location = new System.Drawing.Point(112, 82);
+            this.HistoryPeppLabel.Name = "HistoryPeppLabel";
+            this.HistoryPeppLabel.Size = new System.Drawing.Size(179, 30);
+            this.HistoryPeppLabel.TabIndex = 9;
+            this.HistoryPeppLabel.Text = "Pepperoni Pizza";
+            // 
+            // HistoryMarLabel
+            // 
+            this.HistoryMarLabel.AutoSize = true;
+            this.HistoryMarLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HistoryMarLabel.Location = new System.Drawing.Point(112, 40);
+            this.HistoryMarLabel.Name = "HistoryMarLabel";
+            this.HistoryMarLabel.Size = new System.Drawing.Size(177, 30);
+            this.HistoryMarLabel.TabIndex = 8;
+            this.HistoryMarLabel.Text = "Margerita Pizza";
+            // 
             // PizzaOrderApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 669);
+            this.Controls.Add(this.SummaryGroupBox);
             this.Controls.Add(this.StarterPictureBox);
             this.Controls.Add(this.OrderSummaryGroupBox);
             this.Controls.Add(this.PictureBoxMainMenu);
@@ -595,6 +702,8 @@
             this.OrderSummaryGroupBox.PerformLayout();
             this.CompanySummaryGroupBox.ResumeLayout(false);
             this.CompanySummaryGroupBox.PerformLayout();
+            this.SummaryGroupBox.ResumeLayout(false);
+            this.SummaryGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -647,5 +756,14 @@
         private TextBox AverageTransactionText;
         private Label TotalCompanyTransactionsLabel;
         private PictureBox StarterPictureBox;
+        private GroupBox SummaryGroupBox;
+        private TextBox HistoryCal;
+        private TextBox HistoryPine;
+        private TextBox HistoryPepper;
+        private TextBox HistoryMar;
+        private Label HistoryCalLabel;
+        private Label HistoryPineLabel;
+        private Label HistoryPeppLabel;
+        private Label HistoryMarLabel;
     }
 }
